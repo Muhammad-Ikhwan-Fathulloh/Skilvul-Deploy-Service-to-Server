@@ -16,6 +16,14 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+    const ready = {
+        status: "Welcome to Ikhwan task",
+    }
+
+    res.status(200).send(ready)
+})
+
 // API ENDPOINTS
 app
   .route('/tasks')
